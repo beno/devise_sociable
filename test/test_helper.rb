@@ -37,8 +37,6 @@ end
 
 Migration.new.up
 
-# module Rails;end
-
 require 'devise'
 require 'devise/orm/active_record'
 

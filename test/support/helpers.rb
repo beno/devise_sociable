@@ -33,9 +33,5 @@ class ActiveSupport::TestCase
   def session_store
     Rails.application.config.session_store
   end
-  
-  def clear_store
-    session_store::Session.delete_all
-    User.delete_all
-  end
+
 end

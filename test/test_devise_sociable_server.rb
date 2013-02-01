@@ -12,17 +12,15 @@ class TestDeviseSociableServer < ActiveSupport::TestCase
   end
   
   teardown do
-    setup_rails(ActiveRecord::SessionStore)
-    clear_store
+    ActiveRecord::SessionStore::Session.delete_all
+    User.delete_all
   end
 
   test "server: should have active users" do
-    setup_rails(ActiveRecord::SessionStore)
     assert User.actives(10.minutes.ago) == [@user2]
   end
 
   test "server: user can be (in)active" do
-    setup_rails(ActiveRecord::SessionStore)
     assert @user1.active?(10.minutes.ago) == false
     assert @user2.active?(10.minutes.ago) == true
   end
