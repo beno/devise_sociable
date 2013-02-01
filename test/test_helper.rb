@@ -14,6 +14,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'test/unit'
 require 'active_record'
+require 'mocha'
 require 'helpers'
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
@@ -36,12 +37,7 @@ end
 
 Migration.new.up
 
-class Application
-  def self.config
-    @conf ||= Struct.new(:session_store).new
-  end
-end
-
+# module Rails;end
 
 require 'devise'
 require 'devise/orm/active_record'

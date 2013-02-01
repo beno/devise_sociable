@@ -6,6 +6,7 @@ gem 'devise', "~> 2.2.2"
 
 group :development, :test do
   gem "sqlite3"
+  gem "mocha"
   gem "shoulda"
   gem "bundler"
   gem "jeweler"

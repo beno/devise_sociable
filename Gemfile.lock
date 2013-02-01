@@ -118,6 +118,7 @@ DEPENDENCIES
   bundler
   devise (~> 2.2.2)
   jeweler
+  mocha
   rails (~> 3.2.8)
   shoulda
   simplecov
