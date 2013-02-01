@@ -48,41 +48,32 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, ["~> 3.2.8"])
-      s.add_runtime_dependency(%q<warden>, ["~> 1.0.3"])
-      s.add_runtime_dependency(%q<devise>, ["~> 1.2.1"])
+      s.add_runtime_dependency(%q<warden>, ["~> 1.2.1"])
+      s.add_runtime_dependency(%q<devise>, ["~> 2.2.2"])
       s.add_development_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
-      s.add_runtime_dependency(%q<warden>, [">= 0"])
-      s.add_runtime_dependency(%q<devise>, [">= 0"])
-      s.add_runtime_dependency(%q<rails>, [">= 3.0.4"])
     else
       s.add_dependency(%q<rails>, ["~> 3.2.8"])
-      s.add_dependency(%q<warden>, ["~> 1.0.3"])
-      s.add_dependency(%q<devise>, ["~> 1.2.1"])
+      s.add_dependency(%q<warden>, ["~> 1.2.1"])
+      s.add_dependency(%q<devise>, ["~> 2.2.2"])
       s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<simplecov>, [">= 0"])
-      s.add_dependency(%q<warden>, [">= 0"])
-      s.add_dependency(%q<devise>, [">= 0"])
-      s.add_dependency(%q<rails>, [">= 3.0.4"])
     end
   else
     s.add_dependency(%q<rails>, ["~> 3.2.8"])
-    s.add_dependency(%q<warden>, ["~> 1.0.3"])
-    s.add_dependency(%q<devise>, ["~> 1.2.1"])
+    s.add_dependency(%q<warden>, ["~> 1.2.1"])
+    s.add_dependency(%q<devise>, ["~> 2.2.2"])
     s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<simplecov>, [">= 0"])
-    s.add_dependency(%q<warden>, [">= 0"])
-    s.add_dependency(%q<devise>, [">= 0"])
-    s.add_dependency(%q<rails>, [">= 3.0.4"])
   end
 end
 

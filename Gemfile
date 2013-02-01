@@ -1,8 +1,8 @@
 source "http://rubygems.org"
 
 gem "rails", "~> 3.2.8"
-gem 'warden', "~> 1.0.3"
-gem 'devise', "~> 1.2.1"
+gem 'warden', "~> 1.2.1"
+gem 'devise', "~> 2.2.2"
 
 group :development, :test do
   gem "sqlite3"
