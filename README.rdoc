@@ -14,9 +14,9 @@ If you use cookie sessions (this is the Rails default):
 
 In your model, add :sociable:
 
-class User < ActiveRecord::Base
-  devise ..., :sociable
-end
+  class User < ActiveRecord::Base
+    devise ..., :sociable
+  end
 
 == Thanks to
 

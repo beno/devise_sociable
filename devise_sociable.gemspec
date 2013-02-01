@@ -8,17 +8,18 @@ Gem::Specification.new do |s|
   s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["ctide"]
-  s.date = "2013-01-31"
-  s.description = "Ability to track if users are online."
+  s.authors = ["beno"]
+  s.date = "2013-02-01"
+  s.description = "This ensures that devise will update a last_seen flag on the model whenever you check if a user is authed."
   s.email = "michelbenevento@yahoo.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
-    ".document",
+    ".bundle/config",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
@@ -31,53 +32,54 @@ Gem::Specification.new do |s|
     "lib/devise_sociable/version.rb",
     "lib/generators/devise_sociable/devise_sociable_generator.rb",
     "lib/generators/devise_sociable/templates/migration.rb",
-    "test/helper.rb",
-    "test/test_devise_sociable.rb"
+    "test/support/helpers.rb",
+    "test/test_devise_sociable_cookie.rb",
+    "test/test_devise_sociable_server.rb",
+    "test/test_helper.rb"
   ]
   s.homepage = "http://github.com/beno/devise_sociable"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
-  s.summary = "Ability to track if users are online."
-  s.test_files = [
-    "test/helper.rb",
-    "test/test_devise_sociable.rb"
-  ]
+  s.rubygems_version = "1.8.23"
+  s.summary = "This ensures that devise will update a last_seen flag on the model whenever you check if a user is authed."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, [">= 3.0.4"])
-      s.add_runtime_dependency(%q<warden>, [">= 0"])
-      s.add_runtime_dependency(%q<devise>, [">= 0"])
+      s.add_runtime_dependency(%q<rails>, ["~> 3.2.8"])
+      s.add_runtime_dependency(%q<warden>, ["~> 1.0.3"])
+      s.add_runtime_dependency(%q<devise>, ["~> 1.2.1"])
+      s.add_development_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.1.5"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<bundler>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_runtime_dependency(%q<warden>, [">= 0"])
       s.add_runtime_dependency(%q<devise>, [">= 0"])
       s.add_runtime_dependency(%q<rails>, [">= 3.0.4"])
     else
-      s.add_dependency(%q<rails>, [">= 3.0.4"])
-      s.add_dependency(%q<warden>, [">= 0"])
-      s.add_dependency(%q<devise>, [">= 0"])
+      s.add_dependency(%q<rails>, ["~> 3.2.8"])
+      s.add_dependency(%q<warden>, ["~> 1.0.3"])
+      s.add_dependency(%q<devise>, ["~> 1.2.1"])
+      s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["~> 1.1.5"])
-      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<bundler>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<warden>, [">= 0"])
       s.add_dependency(%q<devise>, [">= 0"])
       s.add_dependency(%q<rails>, [">= 3.0.4"])
     end
   else
-    s.add_dependency(%q<rails>, [">= 3.0.4"])
-    s.add_dependency(%q<warden>, [">= 0"])
-    s.add_dependency(%q<devise>, [">= 0"])
+    s.add_dependency(%q<rails>, ["~> 3.2.8"])
+    s.add_dependency(%q<warden>, ["~> 1.0.3"])
+    s.add_dependency(%q<devise>, ["~> 1.2.1"])
+    s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["~> 1.1.5"])
-    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<bundler>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
     s.add_dependency(%q<warden>, [">= 0"])
     s.add_dependency(%q<devise>, [">= 0"])
     s.add_dependency(%q<rails>, [">= 3.0.4"])
