@@ -1,0 +1,29 @@
+= devise_sociable
+
+This gem adds the ability to see who's currently online to devise[http://github.com/plataformatec/devise]. You can use it with server side or cookie based sessions.
+
+== Usage
+  
+If you use server side sessions and have that setup, there is no migration needed.
+
+If you use cookie sessions (this is the Rails default):
+
+  rails g devise_sociable
+  rake db:migrate
+
+
+In your model, add :sociable:
+
+class User < ActiveRecord::Base
+  devise ..., :sociable
+end
+
+== Thanks to
+
+Thanks to devise_lastseenable[https://github.com/ctide/devise_lastseenable] which led me down the path of creating this gem.
+
+== Copyright
+
+Copyright (c) 2011 beno. See LICENSE.txt for
+further details.
+
