@@ -5,43 +5,18 @@
 
 Gem::Specification.new do |s|
   s.name = "devise_sociable"
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["beno"]
   s.date = "2013-02-01"
-  s.description = "This ensures that devise will update a last_seen flag on the model whenever you check if a user is authed."
+  s.summary = "Keep track of who is currently online."
+  s.description = "Track the last request and logout. Provides user.active? and User.actives methods"
   s.email = "michelbenevento@yahoo.com"
-  s.extra_rdoc_files = [
-    "LICENSE.txt",
-    "README.rdoc"
-  ]
-  s.files = [
-    ".bundle/config",
-    "Gemfile",
-    "Gemfile.lock",
-    "LICENSE.txt",
-    "README.rdoc",
-    "Rakefile",
-    "VERSION",
-    "devise_sociable.gemspec",
-    "lib/devise_sociable.rb",
-    "lib/devise_sociable/hooks/sociable.rb",
-    "lib/devise_sociable/model.rb",
-    "lib/devise_sociable/rails.rb",
-    "lib/devise_sociable/version.rb",
-    "lib/generators/devise_sociable/devise_sociable_generator.rb",
-    "lib/generators/devise_sociable/templates/migration.rb",
-    "test/support/helpers.rb",
-    "test/test_devise_sociable_cookie.rb",
-    "test/test_devise_sociable_server.rb",
-    "test/test_helper.rb"
-  ]
   s.homepage = "http://github.com/beno/devise_sociable"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.23"
-  s.summary = "This ensures that devise will update a last_seen flag on the model whenever you check if a user is authed."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

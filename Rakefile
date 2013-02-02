@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "devise_sociable"
   gem.homepage = "http://github.com/beno/devise_sociable"
   gem.license = "MIT"
-  gem.summary = "This ensures that devise will update a last_seen flag on the model whenever you check if a user is authed."
-  gem.description = "This ensures that devise will update a last_seen flag on the model whenever you check if a user is authed."
+  gem.summary = "Keep track of who is currently online."
+  gem.description = "Track the last request and logout. Provides user.active? and User.actives methods"
   gem.email = "michelbenevento@yahoo.com"
   gem.authors = ["beno"]
   gem.add_runtime_dependency 'warden'
