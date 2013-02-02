@@ -9,23 +9,48 @@ module Devise
       end
       
       def active?(last_access)
-        self.class.actives(last_access).include?(self)
+        self.class.cached?(self) || self.class.actives(last_access).include?(self)
+      end
+      
+      def deactivate!
+        self.class.remove_from_cache(self)
       end
       
       module ClassMethods
         
+        @@actives_cache = {}
+        
         def actives(last_access)
-          uses_cookies ? actives_cookies(last_access) : actives_server(last_access)
+          uses_cookies? ? actives_cookies(last_access) : actives_server(last_access)
         end
         
-        def uses_cookies
+        def cached?(user)
+          @@actives_cache[user.id].present?
+        end
+
+        def cache_actives(last_access)
+          actives = {}
+          self.actives(last_access).each do |user|
+            actives[user.id] = user
+          end
+          @@actives_cache = actives
+        end 
+        
+        def remove_from_cache(user)
+          @@actives_cache.delete(user.id)
+        end
+                
+        def uses_cookies?
           session_store == ActionDispatch::Session::CookieStore
         end
         
-        private
+        def actives_cache
+          @@actives_cache
+        end
         
+        private
+                
         def session_store
-          # ::Application.config.session_store
           Rails.application.config.session_store
         end
         
