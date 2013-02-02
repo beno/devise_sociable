@@ -21,7 +21,7 @@ class TestDeviseSociableCookies < ActiveSupport::TestCase
 
   test "user can be (in)active" do
     assert @user1.active?(10.minutes.ago) == true, 'user 1'
-    assert @user2.active?(10.minutes.ago) == false, 'user 2'
+    assert @user2.active?(10.minutes) == false, 'user 2'
     assert @user3.active?(10.minutes.ago) == false, 'user 3'
   end
     

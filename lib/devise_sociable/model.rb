@@ -8,7 +8,9 @@ module Devise
         base.extend(ClassMethods)
       end
       
+      #last_access is a time or duration (number)
       def active?(last_access)
+        last_access = last_access.ago if last_access.is_a? Fixnum
         self.class.cached?(self) || self.class.actives(last_access).include?(self)
       end
       
@@ -21,6 +23,7 @@ module Devise
         @@actives_cache = {}
         
         def actives(last_access)
+          last_access = last_access.ago if last_access.is_a? Fixnum
           uses_cookies? ? actives_cookies(last_access) : actives_server(last_access)
         end
         

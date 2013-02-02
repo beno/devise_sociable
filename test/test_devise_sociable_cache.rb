@@ -35,13 +35,13 @@ class TestDeviseSociableCache < ActiveSupport::TestCase
   
   test "should return new value if cache updated" do
     @user1.update_attribute(:last_sign_out_at, 1.minute.ago)
-    User.cache_actives(10.minutes.ago)
+    User.cache_actives(10.minutes)
     assert User.cached?(@user1) == false, 'cached value updated'
-    assert @user1.active?(10.minutes.ago) == false, 'cached value updated'
+    assert @user1.active?(10.minutes) == false, 'cached value updated'
   end
   
   test "should be removed from cache" do
-    User.cache_actives(10.minutes.ago)
+    User.cache_actives(10.minutes)
     @user1.update_attribute(:last_sign_out_at, 1.minute.ago)
     @user1.deactivate!
     assert User.cached?(@user1) == false, 'cached value removed'
