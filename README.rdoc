@@ -18,18 +18,6 @@ In your model, add :sociable:
     devise ..., :sociable
   end
 
-Then you have access to
-
-  User.actives(10.minutes)    #everybody who has been active and not logged off in the last 10 minutes
-  User.actives(10.minutes.ago)
-  
-  user.active?(1.hour)       #has this user been active and not logged off in the last hour
-  user.active?(1.hour.ago)
-  
-  User.cache_actives(30.minutes)  #fill a cache with all active users. use an outside scheduler like :whenever: to refresh.
-  
-This is pretty experimental, but I think it ought to work.
-  
 == Thanks to
 
 Thanks to devise_lastseenable[https://github.com/ctide/devise_lastseenable] which led me down the path of creating this gem.
