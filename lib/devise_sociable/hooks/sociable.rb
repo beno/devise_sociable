@@ -8,8 +8,12 @@ Warden::Manager.after_set_user do |record, warden, opts|
 end
 
 Warden::Manager.before_logout do |record, warden, opts|
-  record.deactivate!
-  if record.class.uses_cookies?
-    record.update_attribute('last_sign_out_at', Time.zone.now)
+  begin
+    record.deactivate!
+    if record.class.uses_cookies?
+      record.update_attribute('last_sign_out_at', Time.zone.now)
+    end
+  rescue NoMethodError
+    #catch logout calls with no active user
   end
 end
