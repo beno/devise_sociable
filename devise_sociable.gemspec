@@ -48,9 +48,9 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["~> 3.2.8"])
-      s.add_runtime_dependency(%q<warden>, ["~> 1.2.1"])
-      s.add_runtime_dependency(%q<devise>, ["~> 2.2.2"])
+      s.add_runtime_dependency(%q<rails>, ["~> 4.0.2"])
+      # s.add_runtime_dependency(%q<warden>, ["~> 1.2.1"])
+      s.add_runtime_dependency(%q<devise>, ["~> 3.2.2"])
       s.add_development_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<mocha>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
