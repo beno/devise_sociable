@@ -37,7 +37,7 @@ module Devise
             actives[user.id] = user
           end
           @@actives_cache = actives
-        end 
+        end
         
         def remove_from_cache(user)
           @@actives_cache.delete(user.id)
@@ -58,7 +58,7 @@ module Devise
         end
         
         def actives_server(last_access)
-          session_class = session_store::Session
+          session_class = session_store.session_class
           ids = session_class.where("updated_at >= ?", last_access).map do |session|
             data = session.data['warden.user.user.session']
             key = session.data['warden.user.user.key']
